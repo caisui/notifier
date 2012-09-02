@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<dialog id="donothing"
+        windowtype="notifier:notify"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        buttons="accept,cancel"
+        buttonlabelaccept="View"
+        buttonlabelcancel="Clear"
+        _ondialogaccept="return doOK();"
+        _ondialogcancel="return doCancel();"
+>
+<vbox id="main">
+<html:style>
+    dialog {
+        background-color: rgba(255, 255, 255, .8);
+        border: 1px solid black;
+    }
+    menuitem {
+        max-width: 640px;
+    }
+    button {
+        -moz-appearance: none;
+        border: 1px solid gray;
+        border-radius: 3px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+    button:hover {
+        background-color: rgba(255, 255, 222, .5);
+    }
+
+    menuitem.root image {
+        list-style-image: url("chrome://messenger/skin/icons/server.png");
+        -moz-image-region: rect(0px, 16px, 16px, 0px);
+    }
+    menuitem.root {
+        font-weight: bold;
+    }
+    .rss menuitem.root image {
+        list-style-image: url("chrome://messenger-newsblog/skin/icons/rss-feed.png");
+        -moz-image-region: rect(0, 16px, 16px, 0);
+    }
+    .folder {
+        margin-left: 1ex;
+    }
+    .folder image {
+        list-style-image: url("chrome://messenger/skin/icons/folder.png");
+        -moz-image-region: rect(0, 16px, 16px, 0);
+    }
+    .item {
+        margin-left: 2ex;
+        -moz-appearance: none;
+    }
+    .item image {
+        list-style-image: url("chrome://messenger/skin/icons/server.png");
+        -moz-image-region: rect(0px, 16px, 16px, 0px);
+    }
+    .item:hover {
+        background-color: rgba(234,255,234, .8);
+    }
+</html:style>
+<box id="main">
+<image src="chrome://branding/content/icon64.png"/>
+</box>
+<vbox id="list">
+</vbox>
+<script type="text/javascript" src="alert.js"></script>
+</vbox>
+</dialog>
